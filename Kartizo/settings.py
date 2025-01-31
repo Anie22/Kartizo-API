@@ -16,7 +16,7 @@ import os
 from datetime import timedelta
 
 env = environ.Env(
-    DEBUG = (bool, True)
+    DEBUG = (bool, False)
 )
 
 ENVIRONMENT = env('ENVIRONMENT', default='development')
@@ -78,7 +78,7 @@ ROOT_URLCONF = 'Kartizo.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -186,9 +186,9 @@ REST_FRAMEWORK = {
 }
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = 'smtp.zoho.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = env('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
-DEFAULT_FROM_EMAIL = 'Kartizo <francisaniebiet223@gmail.com>'
+DEFAULT_FROM_EMAIL = 'Kartizo <no-reply@kartizoglobal.com>'
