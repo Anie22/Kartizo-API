@@ -26,5 +26,5 @@ class CreateContactView(GenericAPIView):
                 print(str(e))
                 return Response({"message": "Email sending failed", "err": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
             return Response({'message':'Your order request has been made'}, status=status.HTTP_201_CREATED)
-        print(serialiazer.errors)
+        print(serializer.errors)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
