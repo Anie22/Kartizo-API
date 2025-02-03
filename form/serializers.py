@@ -13,7 +13,7 @@ class ContactSerializer(serializers.Serializer):
     fullName = serializers.CharField(max_length=200, write_only=True)
     phoneNumber = PhoneNumberField(region='US', write_only=True)
     email = serializers.EmailField(max_length=250, write_only=True)
-    service = serializers.ChoiceField(default='Okon', choices=SERVICE_CHOICE)
+    service = serializers.ChoiceField(choices=SERVICE_CHOICE, write_only=True)
     date = serializers.DateField()
     time = serializers.TimeField() 
     address = serializers.CharField(max_length=100, write_only=True)
