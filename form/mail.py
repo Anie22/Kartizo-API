@@ -4,7 +4,7 @@ from django.core.mail import EmailMessage
 
 def send_success_mail(email, consulting_booked):
     Subject = 'Order Request - Kartizo Global'
-    email_body = f'Hi {consulting_booked['fullName']} your order request has been made. Our team will contact you with futher information'
+    email_body = f"Hi {consulting_booked['fullName']} your order request has been made. Our team will contact you with futher information"
     from_email = settings.DEFAULT_FROM_EMAIL
 
     email = EmailMessage(subject=Subject, body=email_body, from_email=from_email, to=[email])
