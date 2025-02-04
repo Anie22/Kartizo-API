@@ -23,8 +23,7 @@ class CreateContactView(GenericAPIView):
                 send_admin_mail(consulting_booked)
                 send_success_mail(email, consulting_booked)
             except Exception as e:
+                print(str(e))
                 return Response({"message": "Email sending failed", "err": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
-            print(email)
-            print(consulting_booked)
             return Response({'message':'Your order request has been made'}, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
