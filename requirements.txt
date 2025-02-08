@@ -11,6 +11,7 @@ packaging==24.2
 phonenumbers==8.13.53
 pillow==11.1.0
 psycopg2-binary==2.9.10
+psycopg2-binary==2.9.10
 PyJWT==2.10.1
 sqlparse==0.5.3
 typing_extensions==4.12.2
