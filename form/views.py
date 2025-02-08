@@ -12,7 +12,7 @@ from form.renders import FormAPI
 
 class CreateContactView(GenericAPIView):
     serializer_class = ContactSerializer
-    # renderer_classes = [JSONRenderer, FormAPI]
+    renderer_classes = [JSONRenderer, FormAPI]
 
     def post(self, request):
         serializer = self.serializer_class(data=request.data)
